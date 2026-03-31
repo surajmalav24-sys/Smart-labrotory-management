@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusCare - Sign In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section id="login-view" class="view active" aria-label="Login view">
+        <div class="login-card card-shadow">
+          <header class="login-header">
+            <h1>
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+              CampusCare
+            </h1>
+            <p>Campus Complaint Management System</p>
+          </header>
+
+          <form id="login-form" class="login-form">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@mmit.edu.in" required autocomplete="email" />
+
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+              <input id="password" type="password" placeholder="••••••••" required autocomplete="current-password" />
+              <button type="button" id="toggle-password" class="icon-btn" aria-label="Show password">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+
+            <p id="login-error" class="login-error" role="alert" aria-live="polite"></p>
+            <button type="submit" class="primary-btn">Sign in</button>
+          </form>
+
+          <footer class="demo-credentials">
+            <p>Demo credentials</p>
+            <ul>
+              <li><strong>Admin:</strong> admin@mmit.edu.in / admin123</li>
+              <li><strong>Tech:</strong> tech@mmit.edu.in / tech123</li>
+              <li><strong>Student:</strong> om.wadekar24@mmit.edu.in / student123</li>
+            </ul>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

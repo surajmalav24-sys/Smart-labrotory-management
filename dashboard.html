@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusCare - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section id="dashboard-view" class="view active" aria-label="Admin dashboard">
+        <div class="dashboard-layout">
+          <aside id="sidebar" class="sidebar card-surface">
+            <div>
+              <div class="brand-row">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>CampusCare</span>
+              </div>
+              <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link active"><i class="fa-regular fa-house"></i>Dashboard</a>
+                <a href="dashboard.html" class="nav-link"><i class="fa-regular fa-rectangle-list"></i>All Complaints</a>
+                <a href="dashboard.html" class="nav-link role-admin"><i class="fa-solid fa-gear"></i>Admin Panel</a>
+                <a href="dashboard.html" class="nav-link"><i class="fa-regular fa-building"></i>Departments</a>
+                <a href="dashboard.html" class="nav-link role-admin"><i class="fa-regular fa-user"></i>Users</a>
+              </nav>
+            </div>
+
+            <div class="profile-box">
+              <div class="avatar" id="profile-initial">A</div>
+              <div>
+                <p class="profile-name" id="profile-name">Admin User</p>
+                <p class="role-badge" id="profile-role">ADMIN</p>
+                <a href="index.html" id="sign-out">Sign out</a>
+              </div>
+            </div>
+          </aside>
+
+          <div class="content-panel">
+            <header class="topbar card-surface">
+              <div class="topbar-left">
+                <button type="button" id="menu-toggle" class="menu-btn" aria-label="Toggle menu">
+                  <i class="fa-solid fa-bars"></i>
+                </button>
+                <h2>Dashboard</h2>
+              </div>
+              <div class="controls-row">
+                <div class="search-control">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input id="search-input" type="search" placeholder="Search complaints..." />
+                </div>
+                <select id="department-filter" aria-label="Filter by department">
+                  <option value="all">All Departments</option>
+                </select>
+                <a href="new-complaint.html" id="new-complaint-btn" class="primary-btn compact">+ New Complaint</a>
+              </div>
+            </header>
+
+            <section class="urgent-banner" id="urgent-banner">
+              <h3><i class="fa-solid fa-triangle-exclamation"></i> <span id="urgent-count">0</span> complaint(s) unresolved for &gt;15 days</h3>
+              <ul id="urgent-list"></ul>
+            </section>
+
+            <section class="kpi-grid">
+              <article class="kpi-card card-surface">
+                <div class="kpi-icon"><i class="fa-regular fa-clipboard"></i></div>
+                <div><p>Total Complaints</p><strong id="stat-total">0</strong></div>
+              </article>
+              <article class="kpi-card card-surface">
+                <div class="kpi-icon open"><i class="fa-regular fa-circle-dot"></i></div>
+                <div><p>Open</p><strong id="stat-open">0</strong></div>
+              </article>
+              <article class="kpi-card card-surface">
+                <div class="kpi-icon overdue"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div><p>Overdue (&gt;15 days)</p><strong id="stat-overdue">0</strong></div>
+              </article>
+              <article class="kpi-card card-surface">
+                <div class="kpi-icon resolved"><i class="fa-regular fa-circle-check"></i></div>
+                <div><p>Resolved</p><strong id="stat-resolved">0</strong></div>
+              </article>
+            </section>
+
+            <section class="complaints-section">
+              <div class="section-head">
+                <h3>Recent Complaints</h3>
+                <a href="dashboard.html">View all →</a>
+              </div>
+              <div id="complaint-grid" class="complaint-grid"></div>
+              <div id="empty-state" class="empty-state hidden">
+                <i class="fa-regular fa-folder-open"></i>
+                <p>No complaints found.</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
