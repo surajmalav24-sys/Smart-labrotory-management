@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusCare Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>CampusCare</h1>
+          <p id="role-heading"></p>
+        </div>
+        <div class="topbar-actions">
+          <button id="new-complaint-btn" class="btn btn-primary">+ New Complaint</button>
+          <button id="sign-out-btn" class="btn btn-ghost">Sign out</button>
+        </div>
+      </header>
+
+      <section id="new-complaint-panel" class="panel hidden">
+        <h2>New Complaint</h2>
+        <form id="new-complaint-form" class="form-grid">
+          <input id="complaint-title" type="text" placeholder="Complaint title" required />
+          <input id="complaint-category" type="text" placeholder="Category (e.g. Hardware)" required />
+          <button class="btn btn-primary" type="submit">Submit Complaint</button>
+        </form>
+      </section>
+
+      <section>
+        <h2 id="list-heading">Complaints</h2>
+        <div id="complaint-list" class="card-list"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
