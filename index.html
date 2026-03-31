@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusCare Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="login-shell">
+      <section class="login-card">
+        <h1>CampusCare</h1>
+        <p>Campus Complaint Management System</p>
+
+        <form id="login-form" class="form-grid">
+          <input id="email" type="email" placeholder="Email" required />
+          <input id="password" type="password" placeholder="Password" required />
+          <button class="btn btn-primary" type="submit">Sign in</button>
+          <p id="login-error" class="error-text"></p>
+        </form>
+
+        <div class="demo-box">
+          <strong>Demo credentials</strong>
+          <p>Admin: admin@mmit.edu.in / admin123</p>
+          <p>Tech: tech@mmit.edu.in / tech123</p>
+          <p>Student: om.wadekar24@mmit.edu.in / student123</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

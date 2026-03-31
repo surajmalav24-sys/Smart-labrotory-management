@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusCare - Create Complaint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="form-page">
+      <section class="form-shell card-surface card-shadow">
+        <div class="modal-head">
+          <h3>Create New Complaint</h3>
+          <a class="icon-btn" href="dashboard.html" aria-label="Go back"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+        <form id="complaint-form" class="modal-form">
+          <label for="complaint-title">Title</label>
+          <input id="complaint-title" required type="text" placeholder="Describe the complaint" />
+
+          <label for="complaint-category">Category</label>
+          <select id="complaint-category" required>
+            <option value="Hardware">Hardware</option>
+            <option value="Software">Software</option>
+          </select>
+
+          <label for="complaint-department">Department</label>
+          <input id="complaint-department" required type="text" placeholder="e.g., Computer Science" />
+
+          <label for="complaint-technician">Technician</label>
+          <input id="complaint-technician" type="text" placeholder="Unassigned" />
+
+          <button type="submit" class="primary-btn">Create Complaint</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="new-complaint.js"></script>
+  </body>
+</html>
