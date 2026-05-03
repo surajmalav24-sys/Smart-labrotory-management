@@ -9,35 +9,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   </head>
   <body>
-    <main class="form-page">
-      <section class="form-shell card-surface card-shadow">
-        <div class="modal-head">
-          <h3>Create New Complaint</h3>
-          <a class="icon-btn" href="dashboard.html" aria-label="Go back"><i class="fa-solid fa-arrow-left"></i></a>
+    <main class="login-shell">
+      <section class="login-card">
+        <div class="topbar" style="margin: 0 0 1rem 0;">
+          <h2>Create New Complaint</h2>
+          <a class="btn btn-ghost" href="dashboard.html" aria-label="Go back"><i class="fa-solid fa-arrow-left"></i> Back</a>
         </div>
-        <form id="complaint-form" class="modal-form">
-          <label for="complaint-title">Title</label>
-          <input id="complaint-title" required type="text" placeholder="Describe the complaint" />
 
-          <label for="complaint-category">Category</label>
+        <form id="complaint-form" class="form-grid">
+          <input id="complaint-title" required type="text" placeholder="Title (e.g., PC not turning on)" />
+
+          <label style="font-size: 0.9rem; color: var(--muted);">Upload Photo of Issue</label>
+          <input id="complaint-image" type="file" accept="image/*" required />
+
           <select id="complaint-category" required>
+            <option value="" disabled selected>Select Category</option>
             <option value="Hardware">Hardware</option>
             <option value="Software">Software</option>
+            <option value="Network">Network</option>
+            <option value="Maintenance">Maintenance</option>
           </select>
 
-          <label for="complaint-department">Department</label>
-          <input id="complaint-department" required type="text" placeholder="e.g., Computer Science" />
+          <input id="complaint-department" required type="text" placeholder="Department (e.g., Lab 3)" />
 
-          <label for="complaint-technician">Technician</label>
-          <input id="complaint-technician" type="text" placeholder="Unassigned" />
-
-          <button type="submit" class="primary-btn">Create Complaint</button>
+          <button type="submit" id="submit-btn" class="btn btn-primary">Ask AI / Submit</button>
         </form>
+
+<div class="ai-assistant-container" id="ai-panel" style="display: none;">
+    <h4>🤖 AI Smart Assistant</h4>
+    
+    <div class="ai-message-bubble" id="ai-response-text">
+        Analyzing your issue...
+    </div>
+    
+    <div class="ai-action-buttons">
+        <button id="resolved-by-ai-btn" class="btn-fixed-it">✅ Fixed it!</button>
+        <button id="need-tech-btn" class="btn-call-tech">🔧 Call Technician</button>
+    </div>
+</div>
+
+
       </section>
     </main>
 
     <script src="new-complaint.js"></script>
+    
   </body>
 </html>
